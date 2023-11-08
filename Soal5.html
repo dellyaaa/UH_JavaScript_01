@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tahun Kabisat</title>
+  <style>
+     body {
+        margin-top: 60px;
+        margin-left: 100px;
+        margin-right: 100px;
+        box-shadow: 0 5px 30px rgba(0.5, 0, 0, 0.5);
+        border-radius: 30px;
+        padding: 150px;
+        text-align: center;
+        background: linear-gradient(50deg, #ccfbff, #FEBBCC, #ccdaff);
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      label {
+        font-weight: bold;
+        font-size: 16px;
+        color: #000; /* Warna Hitam */
+      }
+
+      input {
+        padding: 10px;
+        width: 100px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        background-color: #e07ab1; /* Warna Pink */
+        color: #000; /* Warna Hitam */
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #ff53af; /* Warna Pink yang lebih gelap saat dihover */
+      }
+
+      p {
+        font-size: 18px;
+        color: #333;
+        margin-top: 20px;
+      }
+
+      #hasil {
+        color: #000; /* Warna Hitam */
+        font-size: 20px;
+        font-weight: bold;
+      }
+  </style>
+</head>
+<body>
+  <h1>Tahun Kabisat</h1>
+  <label for="tahunInput">Masukkan tahun:</label>
+  <input type="text" id="tahunInput" />
+  <br>
+  <br>
+  <button onclick="cekTahunKabisat()">Cek Tahun Kabisat</button>
+  <p id="hasilCek"></p>
+
+  <script>
+    function cekTahunKabisat() {
+      const tahunInput = document.getElementById("tahunInput").value;
+      const hasilCek = document.getElementById("hasilCek");
+      const tahun = parseInt(tahunInput);
+
+      if (tahun === 1) {
+        hasilCek.textContent = "Bukan tahun kabisat";
+      } else if (tahun % 4 !== 0) {
+        hasilCek.textContent = "Bukan tahun kabisat";
+      } else {
+        hasilCek.textContent = "Tahun kabisat";
+      }
+    }
+  </script>
+</body>
+</html>
